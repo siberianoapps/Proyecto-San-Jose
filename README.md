@@ -1,3 +1,3 @@
 # Proyecto San José
 
-App comunitaria con mapa, orquestas, deportes y actividades recreativas en Ciudad Evita.
+App organizada por secciones: Música, Deportes y Recreación. Cada sección contiene actividades con dirección, horarios e información de contacto.

@@ -7,57 +7,80 @@
   <title>Proyecto San José</title>
   <style>
     body {
-      margin: 0;
       font-family: sans-serif;
-      background-color: #eafaf1;
-      color: #0a3d2e;
+      margin: 0;
+      background-color: #f0fdf4;
+      color: #1b4332;
+    }
+    header, nav, section, footer {
+      padding: 1rem;
     }
     header {
-      background-color: #2e7d32;
-      padding: 1rem;
+      background-color: #2d6a4f;
       color: white;
       text-align: center;
     }
     nav {
+      background-color: #95d5b2;
       display: flex;
       justify-content: space-around;
-      background-color: #c8e6c9;
-      padding: 1rem;
     }
     nav a {
-      color: #0a3d2e;
       text-decoration: none;
+      color: #1b4332;
       font-weight: bold;
     }
-    section {
-      padding: 2rem;
+    .seccion {
+      display: none;
     }
-    footer {
-      background-color: #c8e6c9;
-      text-align: center;
+    .visible {
+      display: block;
+    }
+    .card {
+      background-color: #d8f3dc;
       padding: 1rem;
-      margin-top: 2rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+    }
+    h2 {
+      border-bottom: 2px solid #2d6a4f;
     }
   </style>
+  <script>
+    function mostrarSeccion(id) {
+      document.querySelectorAll('.seccion').forEach(s => s.classList.remove('visible'));
+      document.getElementById(id).classList.add('visible');
+    }
+  </script>
 </head>
 <body>
   <header>
     <h1>Proyecto San José</h1>
-    <p>Mapa y actividades culturales en Ciudad Evita</p>
+    <p>Actividades culturales y deportivas en Ciudad Evita</p>
   </header>
   <nav>
-    <a href="#musica">Música</a>
-    <a href="#deportes">Deportes</a>
-    <a href="#recreacion">Recreación</a>
+    <a href="#" onclick="mostrarSeccion('musica')">Música</a>
+    <a href="#" onclick="mostrarSeccion('deportes')">Deportes</a>
+    <a href="#" onclick="mostrarSeccion('recreacion')">Recreación</a>
   </nav>
-  <section id="musica">
-    <h2>🎶 Música</h2>
-    <ul>
-      <li><strong>Orquesta Papa Francisco</strong> – El Pindo y Perón</li>
-      <li><strong>Orquesta Medalla Milagrosa</strong> – Laquila y El Hornero</li>
-    </ul>
+
+  <section id="musica" class="seccion visible">
+    <h2>🎶 Orquestas</h2>
+    <div class="card">
+      <strong>Orquesta Papa Francisco</strong><br />
+      📍 El Pindo y Teniente General Perón, Ciudad Evita<br />
+      📅 Lunes, martes y jueves<br />
+      🎵 Instrumentos: charango, quena, sicus, vientos andinos, violín, guitarra, percusión, bajo<br />
+      ☎️ Inscripciones: (falta ingresar número)
+    </div>
+    <div class="card">
+      <strong>Orquesta Medalla Milagrosa</strong><br />
+      📍 Laquila y El Hornero, Ciudad Evita<br />
+      📞 Teléfono: (a confirmar)
+    </div>
   </section>
-  <section id="deportes">
+
+  <section id="deportes" class="seccion">
     <h2>🏅 Deportes</h2>
     <ul>
       <li>Fútbol</li>
@@ -66,13 +89,15 @@
       <li>Patín</li>
     </ul>
   </section>
-  <section id="recreacion">
+
+  <section id="recreacion" class="seccion">
     <h2>💃 Recreación</h2>
     <ul>
       <li>Zumba</li>
       <li>Danzas</li>
     </ul>
   </section>
+
   <footer>
     © Proyecto San José
   </footer>
